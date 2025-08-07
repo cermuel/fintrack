@@ -1,13 +1,12 @@
-import { useLocation } from "react-router-dom";
 import { constants } from "../constants";
+import { usePathname } from "next/navigation";
 
 interface SidebarProps {
   showSidebar: boolean;
   toggleSidebar: () => void;
 }
 const Sidebar = ({ showSidebar, toggleSidebar }: SidebarProps) => {
-  const location = useLocation();
-  const route = location.pathname;
+  const route = usePathname();
   return (
     <ul
       className={`w-[320px] bg-[#FCFDFD] ${showSidebar ? "left-0" : "-left-[320px]"} transition-[left] px-2 py-4 duration-300 shadow ease-linear fixed z-40 h-[calc(100vh-4rem)] top-16 flex flex-col`}

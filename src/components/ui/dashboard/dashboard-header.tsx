@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaEllipsis } from "react-icons/fa6";
 
 const DashboardHeader = () => {
@@ -7,7 +8,7 @@ const DashboardHeader = () => {
         <h1 className="text-[#1B2528] text-xl font-bold md:text-4xl">
           Wallet Ledger
         </h1>
-        <img src="/icons/caret.svg" alt="" />
+        <Image width={10} height={10} src="/icons/caret.svg" alt="" />
         <div className="bg-[#34616F17] rounded-full h-7 w-max flex items-center gap-2 px-2.5 ml-1">
           <div className="w-1  h-1  bg-[#087A2E] rounded-full"></div>
           <span className="text-[#1B2528] font-medium text-xs">Active</span>

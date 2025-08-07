@@ -1,3 +1,4 @@
+"use client";
 import { useState, type ReactNode } from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";

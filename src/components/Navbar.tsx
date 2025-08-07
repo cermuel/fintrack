@@ -3,6 +3,7 @@ import { VscClose } from "react-icons/vsc";
 import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
 import { useSearch } from "../hooks/useSearch";
+import Image from "next/image";
 
 interface NavbarProps {
   showSidebar: boolean;
@@ -18,10 +19,16 @@ const Navbar = ({ toggleSidebar, showSidebar }: NavbarProps) => {
           {showSidebar ? (
             <VscClose className="md:size-6 size-5" />
           ) : (
-            <RxHamburgerMenu className="md:size-6 size-5" />
+            <RxHamburgerMenu className="md:size-5 size-4" />
           )}
         </button>
-        <img src="/logo.svg" alt="logo" className="md:h-7.5 h-6" />
+        <Image
+          width={100}
+          height={100}
+          src="/logo.svg"
+          alt="logo"
+          className="md:h-7.5 h-6"
+        />
       </div>
       <div className="flex items-center gap-4 md:gap-6">
         <div
@@ -46,12 +53,16 @@ const Navbar = ({ toggleSidebar, showSidebar }: NavbarProps) => {
             />
           </div>
         </div>
-        <img
+        <Image
+          width={100}
+          height={100}
           src="/icons/app-grid.svg"
           alt="app grid icon"
           className="w-4.5 aspect-square max-md:hidden"
         />
-        <img
+        <Image
+          width={100}
+          height={100}
           src="/icons/user-icon.svg"
           alt="user icon"
           className="w-7 aspect-square"
