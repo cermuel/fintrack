@@ -3,10 +3,12 @@ const formatDollar = (amount: number | string): string => {
 
   if (isNaN(num)) return "$0";
 
-  return `$${num.toLocaleString("en-US", {
+  const absFormatted = Math.abs(num).toLocaleString("en-US", {
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
-  })}`;
+  });
+
+  return num < 0 ? `-$${absFormatted}` : `$${absFormatted}`;
 };
 
 export const helper = { formatDollar };

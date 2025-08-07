@@ -2,6 +2,7 @@ import { useState } from "react";
 import DashboardHeader from "../components/ui/dashboard/dashboard-header";
 import { constants } from "../constants";
 import DashboardSummary from "../components/ui/dashboard/dashboard-summary";
+import DashboardTable from "../components/ui/dashboard/dashboard-table";
 
 type tabType = "Overview" | "Transactions";
 const Dashboard = () => {
@@ -9,7 +10,7 @@ const Dashboard = () => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <div className="w-full h-max py-10 md:px-6 px-4 ">
+    <div className="w-full h-max py-10 md:px-10 px-4 ">
       <DashboardHeader />
       <div className="flex mt-4 items-center">
         {constants.USERS.slice(0, 4).map((e, idx: number) => (
@@ -46,6 +47,7 @@ const Dashboard = () => {
         </div>
       </div>
       <DashboardSummary />
+      <DashboardTable />
     </div>
   );
 };
